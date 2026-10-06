@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1340 480" role="img" aria-labelledby="t d">
+  <title id="t">One AI chat turn</title>
+  <desc id="d">A learner message, typed or spoken, passes on-device pre-checks and is sent with the user's identity token, recent turns, level, goal and app language to a server-side proxy. The proxy verifies the token, applies a deterministic crisis-pattern guard, asks a third-party language model for a structured reply, normalises it and returns it. The app shows the reply with at most one correction, reads it aloud, and charges a heart only after success.</desc>
+  <defs>
+    <style>
+      text { font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; fill: #e9e6f7; }
+      .h { font-size: 24px; font-weight: 700; }
+      .k { font-size: 12px; fill: #b9a4f5; letter-spacing: 1.5px; font-weight: 700; }
+      .b { font-size: 16px; font-weight: 600; }
+      .s { font-size: 13px; fill: #b3adce; }
+      .note { font-size: 13px; fill: #9f98c0; font-style: italic; }
+      .c { fill: #2f2560; stroke: #7a62d6; stroke-width: 2; }
+      .p { fill: #1a2c3d; stroke: #4aa3d8; stroke-width: 2; }
+      .arrow { stroke: #9a86f0; stroke-width: 2; fill: none; marker-end: url(#a); }
+    </style>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#9a86f0"/>
+    </marker>
+  </defs>
+  <rect width="1340" height="480" rx="16" fill="#120f24"/>
+  <text x="40" y="48" class="h">One AI chat turn, end to end</text>
+
+  <text x="40" y="104" class="k">ON DEVICE</text>
+  <text x="560" y="264" class="k">SERVER-SIDE PROXY</text>
+
+  <rect x="40" y="116" width="220" height="92" rx="12" class="c"/>
+  <text x="56" y="144" class="b">1  Learner input</text>
+  <text x="56" y="168" class="s">typed text, or held-to-speak</text>
+  <text x="56" y="186" class="s">voice transcribed first</text>
+
+  <rect x="300" y="116" width="220" height="92" rx="12" class="c"/>
+  <text x="316" y="144" class="b">2  Pre-checks</text>
+  <text x="316" y="168" class="s">network available</text>
+  <text x="316" y="186" class="s">heart available (free tier)</text>
+
+  <rect x="560" y="116" width="220" height="92" rx="12" class="c"/>
+  <text x="576" y="144" class="b">3  Request</text>
+  <text x="576" y="168" class="s">ID token, recent turns, level,</text>
+  <text x="576" y="186" class="s">goal and app language</text>
+
+  <rect x="1080" y="116" width="220" height="92" rx="12" class="c"/>
+  <text x="1096" y="144" class="b">7  Show and speak</text>
+  <text x="1096" y="168" class="s">reply bubble, one optional</text>
+  <text x="1096" y="186" class="s">correction, read aloud</text>
+
+  <rect x="560" y="276" width="220" height="92" rx="12" class="p"/>
+  <text x="576" y="304" class="b">4  Verify and screen</text>
+  <text x="576" y="328" class="s">token check, then a fixed-</text>
+  <text x="576" y="346" class="s">pattern crisis guard</text>
+
+  <rect x="820" y="276" width="220" height="92" rx="12" class="p"/>
+  <text x="836" y="304" class="b">5  Model call</text>
+  <text x="836" y="328" class="s">level-aware instructions,</text>
+  <text x="836" y="346" class="s">JSON-shaped reply requested</text>
+
+  <rect x="1080" y="276" width="220" height="92" rx="12" class="p"/>
+  <text x="1096" y="304" class="b">6  Normalise</text>
+  <text x="1096" y="328" class="s">schema check, coherence</text>
+  <text x="1096" y="346" class="s">guard, safety label</text>
+
+  <path d="M260 162 L300 162" class="arrow"/>
+  <path d="M520 162 L560 162" class="arrow"/>
+  <path d="M670 208 L670 276" class="arrow"/>
+  <path d="M780 322 L820 322" class="arrow"/>
+  <path d="M1040 322 L1080 322" class="arrow"/>
+  <path d="M1190 276 L1190 208" class="arrow"/>
+
+  <text x="40" y="420" class="note">A crisis-pattern match in step 4 skips the model and returns a fixed, pre-written reply. A heart is charged only after a reply arrives.</text>
+  <text x="40" y="444" class="note">The conversation lives in memory for the open screen; each request carries the recent turns, so the proxy keeps no session.</text>
+</svg>

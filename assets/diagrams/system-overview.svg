@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1300 560" role="img" aria-labelledby="t d">
+  <title id="t">System overview</title>
+  <desc id="d">A Flutter app bundles its lesson content and keeps progress locally. It uses Firebase for sign-in, a cloud database, remote configuration, analytics and messaging. For AI features it calls a server-side proxy with the signed-in user's token; the proxy alone holds the credential for a third-party language-model and speech API. Store billing, an ad SDK and local reminders are platform services used directly by the app.</desc>
+  <defs>
+    <style>
+      text { font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; fill: #e9e6f7; }
+      .h { font-size: 24px; font-weight: 700; }
+      .k { font-size: 12px; fill: #b9a4f5; letter-spacing: 1.5px; font-weight: 700; }
+      .b { font-size: 16px; font-weight: 600; }
+      .s { font-size: 13px; fill: #b3adce; }
+      .note { font-size: 13px; fill: #9f98c0; font-style: italic; }
+      .app { fill: #231b45; stroke: #8b5cf6; stroke-width: 2; }
+      .fb { fill: #2a2147; stroke: #8b7cf6; stroke-width: 2; }
+      .px { fill: #1f2b3f; stroke: #4aa3d8; stroke-width: 2; }
+      .tp { fill: #2f2a1c; stroke: #d6a24a; stroke-width: 2; stroke-dasharray: 6 4; }
+      .pl { fill: #17323a; stroke: #3aa7a0; stroke-width: 2; }
+      .box { fill: #2f2560; stroke: #7a62d6; stroke-width: 1.5; }
+      .box2 { fill: #1a2c3d; stroke: #4aa3d8; stroke-width: 1.5; }
+      .arrow { stroke: #9a86f0; stroke-width: 2; fill: none; marker-end: url(#a); }
+      .darrow { stroke: #d6a24a; stroke-width: 2; fill: none; stroke-dasharray: 6 4; marker-end: url(#ad); }
+    </style>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#9a86f0"/>
+    </marker>
+    <marker id="ad" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#d6a24a"/>
+    </marker>
+  </defs>
+  <rect width="1300" height="560" rx="16" fill="#120f24"/>
+  <text x="40" y="48" class="h">System overview: bundled content, thin backend, AI behind a proxy</text>
+
+  <rect x="40" y="90" width="540" height="420" rx="14" class="app"/>
+  <text x="62" y="120" class="k">FLUTTER APP (ANDROID AND IOS TARGETS)</text>
+  <rect x="62" y="140" width="250" height="64" rx="10" class="box"/>
+  <text x="78" y="166" class="b">Screens and view models</text><text x="78" y="186" class="s">Provider, ChangeNotifier</text>
+  <rect x="328" y="140" width="232" height="64" rx="10" class="box"/>
+  <text x="344" y="166" class="b">Bundled lesson content</text><text x="344" y="186" class="s">180 lessons, 6 scenarios</text>
+  <rect x="62" y="226" width="250" height="64" rx="10" class="box"/>
+  <text x="78" y="252" class="b">Local storage</text><text x="78" y="272" class="s">progress, saved words, review</text>
+  <rect x="328" y="226" width="232" height="64" rx="10" class="box"/>
+  <text x="344" y="252" class="b">Voice layer</text><text x="344" y="272" class="s">recorder, device STT, TTS</text>
+  <rect x="62" y="312" width="498" height="70" rx="12" class="box2"/>
+  <text x="80" y="340" class="b">AI client</text><text x="80" y="362" class="s">Bearer ID token on every call; per-feature payloads only</text>
+  <rect x="62" y="400" width="250" height="64" rx="10" class="box"/>
+  <text x="78" y="426" class="b">Progress sync</text><text x="78" y="446" class="s">merge local and cloud copy</text>
+  <rect x="328" y="400" width="232" height="64" rx="10" class="box"/>
+  <text x="344" y="426" class="b">Hearts and entitlements</text><text x="344" y="446" class="s">daily allowance, premium flag</text>
+  <text x="62" y="490" class="note">Lesson content ships in the app; AI features need a network.</text>
+
+  <rect x="640" y="90" width="300" height="210" rx="14" class="fb"/>
+  <text x="662" y="120" class="k">FIREBASE</text>
+  <rect x="662" y="134" width="256" height="48" rx="10" class="box"/>
+  <text x="678" y="154" class="b">Authentication</text><text x="678" y="172" class="s">email, Google, Apple</text>
+  <rect x="662" y="190" width="256" height="48" rx="10" class="box"/>
+  <text x="678" y="210" class="b">Cloud Firestore</text><text x="678" y="228" class="s">profile, stats, lesson progress</text>
+  <rect x="662" y="246" width="256" height="44" rx="10" class="box"/>
+  <text x="678" y="266" class="b">Config, analytics, push</text><text x="678" y="283" class="s">remote flags, events, messaging</text>
+
+  <rect x="640" y="320" width="300" height="190" rx="14" class="px"/>
+  <text x="662" y="350" class="k">SERVER-SIDE PROXY</text>
+  <rect x="662" y="366" width="256" height="40" rx="10" class="box2"/>
+  <text x="678" y="391" class="b">Verifies the sign-in token</text>
+  <rect x="662" y="414" width="256" height="40" rx="10" class="box2"/>
+  <text x="678" y="439" class="b">Prompting, parsing, scoring</text>
+  <rect x="662" y="462" width="256" height="40" rx="10" class="box2"/>
+  <text x="678" y="487" class="b">Holds the API credential</text>
+
+  <rect x="1000" y="90" width="260" height="210" rx="14" class="pl"/>
+  <text x="1022" y="120" class="k">PLATFORM SERVICES</text>
+  <rect x="1022" y="134" width="216" height="48" rx="10" class="box2"/>
+  <text x="1038" y="154" class="b">Store billing</text><text x="1038" y="172" class="s">purchase and restore</text>
+  <rect x="1022" y="190" width="216" height="48" rx="10" class="box2"/>
+  <text x="1038" y="210" class="b">Ad SDK</text><text x="1038" y="228" class="s">consent form first</text>
+  <rect x="1022" y="246" width="216" height="44" rx="10" class="box2"/>
+  <text x="1038" y="266" class="b">Local reminders</text><text x="1038" y="283" class="s">scheduled notifications</text>
+
+  <rect x="1000" y="320" width="260" height="190" rx="14" class="tp"/>
+  <text x="1022" y="350" class="k">THIRD-PARTY API</text>
+  <text x="1022" y="390" class="b">Language model</text>
+  <text x="1022" y="412" class="s">tutor turns, short tips, glosses</text>
+  <text x="1022" y="448" class="b">Speech to text</text>
+  <text x="1022" y="470" class="s">uploaded recordings</text>
+  <text x="1022" y="496" class="note">reached only through the proxy</text>
+
+  <path d="M580 200 L640 200" class="arrow"/>
+  <path d="M560 347 L640 347" class="arrow"/>
+  <path d="M940 415 L1000 415" class="darrow"/>
+  <path d="M790 320 L790 302" class="arrow"/>
+  <text x="640" y="540" class="note">Solid arrows: app and Firebase stack. Dashed: external service.</text>
+</svg>
